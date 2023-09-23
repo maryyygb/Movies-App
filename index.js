@@ -15,7 +15,7 @@ uuidv4()
 
 //set the environment variables
 const hostname = process.env.HOSTNAME || '127.0.0.1';
-const port = process.env.PORT || '4000';
+const port = process.env.PORT || '3000';
 
 //set the template engine
 app.set('view engine', 'ejs');
