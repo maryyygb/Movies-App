@@ -1,4 +1,18 @@
 <%-include('dash-header') -%>
+<header>
+  <ul>
+    <li>
+  <h5><%= locals.user?user:'No email found'  %></h5>
+    </li>
+    <li>
+      <form action="" id="form"></form>
+  <input type="text" id="search" placeholder="Search..." class="search">
+</li>
+<li>
+  <a href="/logout">Logout</a>
+</li>
+</ul>
+</header>
 
 <main>
   

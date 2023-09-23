@@ -2,10 +2,19 @@ const APIKEY = "04c35731a5ee918f014970082a0088b1";
 const APIURL = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=d183e60f91f44f9fd932a595c8654fc6&page=1";
 const IMGPATH = "https://image.tmdb.org/t/p/w1280";
 
-// document.getElementById("moneyVideo").loop = true;
+const SEARCHAPI = "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5ee918f014970082a0088b1&query=";
 
-const main = document.querySelector('main');
 
+// getting from the ejs
+const main = document.querySelector("main");
+const form = document.querySelector("form");
+const search = document.querySelector("search");
+
+// initially get favorites movies
+getMovies();
+
+
+// fetching data from the api
 async function getMovies() {
     const resp = await fetch(APIURL);
     const respData = await resp.json();
@@ -18,6 +27,9 @@ async function getMovies() {
         const movieEl = document.createElement("div");
         movieEl.classList.add("movie");
 
+
+        // html/ejs to show in the webpage
+
         movieEl.innerHTML = `
 
     <img 
@@ -27,7 +39,7 @@ async function getMovies() {
 
         <div class="movie-info">
         <h3>${title}</h3>
-        <span>${vote_average}</span>
+        <span class="${getCLassByRate(vote_average)}">${vote_average}</span>
         
     </div>
         `;
@@ -41,4 +53,21 @@ async function getMovies() {
     return respData;
 }
 
-getMovies();
+function getCLassByRate(vote){
+    if(vote >= 8) {
+        return 'green';
+    } else if(vote >= 5){
+        return 'orange'
+    } else {
+        return 'red';
+    }
+}
+
+
+// for search feature
+
+form.addEventListener('submit', (e) => {
+    e.provenDefault();
+
+    const searchTerms = search.value;
+});
