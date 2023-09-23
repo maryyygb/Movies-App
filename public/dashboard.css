@@ -35,6 +35,7 @@ header h5{
     color: #eee;
     display: flex;
     justify-content: flex-start;
+    align-items: center;
 }
 
 header a{
@@ -49,8 +50,20 @@ header a:hover{
     color: black;
     background-color: orange;
     border: 1px solid black;
+    cursor: pointer;
 }
 
+header ul li img{
+    position: relative;
+    height: 5rem;
+    margin-left: -100px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+header ul li a{
+    margin-right: -100px;
+}
 
 .search{
     border-radius: 50px;

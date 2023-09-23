@@ -1,30 +1,28 @@
 <%-include('dash-header') -%>
-<header>
+  <header>
   <ul>
     <li>
-  <h5>PROFILE: <%= locals.user?user:'No email found'  %></h5>
+      <img src="/static/assets/mylogo.ico" alt="">
+        <h5>USER PROFILE: <%= locals.user?user:'No email found'  %></h5>
     </li>
-    <li>
+  <li>
       <form id="form"></form>
-  <input 
-  type="text" 
-  id="search" 
-  placeholder="Search..." class="search">
-</li>
-<li>
-  <a href="/logout">Logout</a>
-</li>
-</ul>
-</header>
+      <input 
+      type="text" 
+      id="search" 
+      placeholder="Search..." class="search">
+  </li>
+  <li class="logout">
+    <a href="/logout">Logout</a>
+  </li>
+  </ul>
+  </header>
 
-<main id="main">
-  
-</main>
+  <main id="main">
+    
+  </main>
 
     <!-- <div class="text-center center-div mt-5" id="login">
-
-      
-
 
       <div class="container w-25 border py-5 mt-5">
         <h3>Dashboard</h3>
