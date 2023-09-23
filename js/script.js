@@ -6,23 +6,32 @@ const SEARCHAPI = "https://api.themoviedb.org/3/search/movie?&api_key=04c35731a5
 
 
 // getting from the ejs
-const main = document.querySelector("main");
-const form = document.querySelector("form");
-const search = document.querySelector("search");
+const main = document.getElementById("main");
+const form = document.getElementById("form");
+const search = document.getElementById("search");
 
 // initially get favorites movies
-getMovies();
+getMovies(APIURL);
 
 
 // fetching data from the api
-async function getMovies() {
-    const resp = await fetch(APIURL);
+async function getMovies(url) {
+    const resp = await fetch(url);
     const respData = await resp.json();
 
     console.log(respData);
 
-    respData.results.forEach((movie) => {
-        const { poster_path, title, vote_average } = movie
+    
+    showMovies(respData.results);
+
+}
+
+function showMovies(movies){
+    // clear main
+    main.innerHTML = "";
+
+    movies.forEach((movie) => {
+        const { poster_path, title, vote_average, overview } = movie
 
         const movieEl = document.createElement("div");
         movieEl.classList.add("movie");
@@ -31,7 +40,6 @@ async function getMovies() {
         // html/ejs to show in the webpage
 
         movieEl.innerHTML = `
-
     <img 
     src="${IMGPATH + poster_path}"
     alt="${title}"
@@ -42,15 +50,15 @@ async function getMovies() {
         <span class="${getCLassByRate(vote_average)}">${vote_average}</span>
         
     </div>
+    <div class="overview">
+                <h3>Overview:</h3>
+                ${overview}
+            </div>
         `;
 
         main.appendChild(movieEl);
 
-
     });
-
-
-    return respData;
 }
 
 function getCLassByRate(vote){
@@ -70,4 +78,14 @@ form.addEventListener('submit', (e) => {
     e.provenDefault();
 
     const searchTerms = search.value;
+
+
+    // making the search working
+    if(searchTerms) {
+
+        getMovies(SEARCHAPI + searchTerms);
+
+        search.value = "";
+
+    }
 });
