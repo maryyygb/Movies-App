@@ -1,0 +1,50 @@
+<%-include('log-header') -%>
+<div class="text-center center-div" id="login">
+  <div class="container">
+    <div class="title pb-5">
+      
+      <% if(locals.logout) {%>
+      <div class="alert alert-success text-center"><%= logout%></div>
+      <%}%>
+    </div>
+
+    <form action="/login" method="POST" class="login-form">
+
+      <h2 class="font-weight-bold">Login App</h2>
+
+      <span class="label"> Login for the existing user </span>
+      <br>
+      <div class="form-group">
+        <input
+          type="email"
+          placeholder="email"
+          class="form-control"
+          value="kodego@test.com"
+          name="email"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="password"
+          placeholder="password"
+          class="form-control"
+          value="12345678"
+          name="password"
+        />
+      </div>
+
+      <button type="submit" class="btn">Submit</button>
+      <div class="links">
+        <a href="\">Forget Password</a>
+        <a href="#">Sign In</a>
+      </div>
+    </form>
+    <br />
+    <% if(locals.errors) {%>
+    <div class="alert alert-danger text-center"><%= errors%></div>
+    <%}%> <% if(locals.isInvalid) {%>
+    <div class="alert alert-danger text-center"><%= isInvalid%></div>
+    <%}%>
+  </div>
+</div>
+<%-include('footer') -%>
