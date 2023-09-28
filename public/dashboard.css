@@ -1,24 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Maven+Pro&family=Nunito:wght@200&family=Playfair+Display:wght@400;600&family=Poppins:wght@100;300;400;500;600;700&family=Roboto:ital,wght@0,300;0,400;1,300&family=Slabo+27px&display=swap');
 
 *{
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
+    color: white;
 }
 
 body{
     background-color: #23242b;
     font-family: "Roboto", sans-serif;
-    margin: 0;
+    /* margin: 0; */
 }
 
 
 /* navbar - bootstrap*/
 
 nav{
+    position: fixed;
+    top: 0;
     height: 80px;
     background-color: #2f303f;
     border-bottom: 8px solid #57586d;
     font-size: larger;
+    color: white;
 }
+
 nav div a .imglogo{
     margin: 5px 0% 5px 60px;
     height: 100px;
@@ -41,25 +48,29 @@ nav .container-fluid .collapse ul li a{
     nav .container-fluid .collapse ul li a{
         padding: 0% 20px;
         color: white;
-        
+        font-size: large;
         }
 
         nav .container-fluid .collapse ul .dropdown-menu{
             padding: 0% 20px;
             color: white;
-            background-color: #23242b;
+            background-color: #2f303f;
             padding: 20px;
             }
 
             nav .container-fluid .collapse ul .dropdown-menu a:hover{
                 background-color: #57586d;
+                padding: 6px;
+                align-items: center;
+                justify-content: center;
+                border-radius: 5px;
             }
 
             /* END OF NAVBAR */
 
             /* HEADER */
 
-header{
+/* header{
     background-color: #2f303f;
     padding: 1rem 3rem;
     display: flex;
@@ -111,7 +122,7 @@ header ul li img{
 
 header ul li a{
     margin-right: -100px;
-}
+} */
 
 /* END OF HEADER */
 
@@ -139,9 +150,14 @@ header ul li a{
     color: #eee;
 }
 
+
+/* API */
+
 main{
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
     /* the movies api */
@@ -212,7 +228,7 @@ div .container video{
 
     /* Overview */
 .overview {
-    background-color: #fff;
+    background-color: #f92b738f;
     padding: 2rem;
     position: absolute;
     max-height: 100%;
@@ -222,6 +238,7 @@ div .container video{
     right: 0;
     transform: translateY(101%);
     transition: transform 0.3s ease-in;
+    color: white;
 }
 
 .overview h3 {
@@ -252,6 +269,9 @@ form{
 
 /* media */
 
-@media screen and (max-width: 600px){
-    
+@media all and (max-width: 320px){
+    main{
+        display: flex;
+        flex-wrap: wrap;
+    }
 }

@@ -22,7 +22,9 @@
             My Profile
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">My Account</a></li>
+            <li><a class="dropdown-item" href="#">
+              <h5>USER PROFILE: <%= locals.user?user:'No email found'  %></h5>
+            </a></li>
             <li><hr class="dropdown-divider">
               <li><a class="dropdown-item" href="/logout">Logout</a></li>
           </ul>
@@ -31,8 +33,10 @@
           <a class="nav-link disabled" aria-disabled="true">KodeGo MP2</a>
         </li>
       </ul>
+
+      <!-- Search -->
       <form class="d-flex" role="search" id="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
@@ -64,7 +68,7 @@
     </div> -->
     <BR></BR>
 
-  <main id="main">
+  <main id="main" class="main">
     
   </main>
 
