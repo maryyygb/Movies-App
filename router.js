@@ -32,7 +32,6 @@ router.post('/login', [
 
     if(!errors.isEmpty()){
         console.log(errors);
-        // res.send({ errors: errors.array() });
         res.render('login',{title:'Login Page', errors: 'Please check your input' });
     }else{
         if(req.body.email == credential.email && req.body.password == credential.password){
@@ -44,12 +43,6 @@ router.post('/login', [
         }
     }
 
-    // if(!req.body.email || !req.body.password){
-    //     res.send('email or password is required');
-    // }else{
-       
-      
-    // }
 });
 
 //route to the dashboard
@@ -57,7 +50,7 @@ router.get('/dashboard',(req, res)=>{
     if(req.session.user){
         res.render('dashboard',{title:'Dashboard', user: req.session.user });
     }else{
-        res.send(403);
+        res.send(403); //forbidden
     }
 });
 
