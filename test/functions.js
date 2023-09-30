@@ -9,6 +9,8 @@ const functions = {
 
 
 // fetching data from the api
+
+// 1
 async function getMovies(url) {
     const resp = await fetch(url);
     const respData = await resp.json();
@@ -18,8 +20,9 @@ async function getMovies(url) {
     
     showMovies(respData.results);
 
-}
+};
 
+// 2
 function showMovies(movies){
     // clear main
     main.innerHTML = "";

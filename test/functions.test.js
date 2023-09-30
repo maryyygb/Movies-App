@@ -8,10 +8,19 @@ const functions = require('./functions');
 // });
 
 
+// const {}
+
 // for the api
 // ASYNC/AWAIT
 
-test('fetching data from the api', async () => {
-    const resp = await fetch(url);
-    expect(data).toBe('respData');
-  });
+test('fetching data from the api', () => {
+    expect(functions()).toBe(functions);
+});
+
+
+// async () => {
+//     const resp = await fetch(url);
+//     expect(data).toBe('respData');
+//   });
+
+
