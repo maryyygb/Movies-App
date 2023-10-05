@@ -66,65 +66,13 @@ nav .container-fluid .collapse ul li a{
                 border-radius: 5px;
             }
 
+form button .btn{
+    border: 1px solid #f92b73;
+    color: white;
+}
             /* END OF NAVBAR */
 
-            /* HEADER */
-
-/* header{
-    background-color: #2f303f;
-    padding: 1rem 3rem;
-    display: flex;
-   
-}
-
-header ul{
-    display: flex;
-    align-items: center;
-}
-
-
-header ul li{
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 10%;
-}
-
-header h5{
-    color: #eee;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-header a{
-    text-decoration: none;
-    color: #eee;
-    border: solid 1px white;
-    border-radius: 10px;
-    padding: 5px 10px;
-}
-
-header a:hover{
-    color: black;
-    background-color: orange;
-    border: 1px solid black;
-    cursor: pointer;
-}
-
-header ul li img{
-    position: relative;
-    height: 5rem;
-    margin-left: -100px;
-    margin-right: 20px;
-    cursor: pointer;
-}
-
-header ul li a{
-    margin-right: -100px;
-} */
-
-/* END OF HEADER */
+            
 
 
     /* search bar */
